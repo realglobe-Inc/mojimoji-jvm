@@ -6,7 +6,6 @@ plugins {
 }
 
 group = "com.realglobe"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
