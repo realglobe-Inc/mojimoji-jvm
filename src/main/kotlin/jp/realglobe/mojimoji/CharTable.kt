@@ -77,7 +77,7 @@ private val kanaMaruMap = mapOf(
         'パ' to 'ﾊ', 'ピ' to 'ﾋ', 'プ' to 'ﾌ', 'ペ' to 'ﾍ', 'ポ' to 'ﾎ'
 )
 
-object HZTable {
+internal object HZTable {
     val alpha = alphabetHankaku.zip(alphabetZenkaku).toMap()
     val digit = digitHankaku.zip(digitZenkaku).toMap()
     val symbol = symbolHankaku.zip(symbolZenkaku).toMap()
@@ -86,7 +86,7 @@ object HZTable {
     val kana = kanaHankaku.zip(kanaZenkaku).toMap()
 }
 
-object ZHTable {
+internal object ZHTable {
     val alpha = alphabetZenkaku.zip(alphabetHankaku).toMap()
     val digit = digitZenkaku.zip(digitHankaku).toMap()
     val symbol = symbolZenkaku.zip(symbolHankaku).toMap()
