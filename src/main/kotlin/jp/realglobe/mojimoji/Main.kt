@@ -1,4 +1,4 @@
-package com.realglobe.mojimoji
+package jp.realglobe.mojimoji
 
 fun hanToZen(
         text: String,

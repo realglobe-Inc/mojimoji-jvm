@@ -1,4 +1,4 @@
-package com.realglobe.mojimoji
+package jp.realglobe.mojimoji
 
 
 private fun charsFromRange(start: Char, length: Int): Array<Char> {
