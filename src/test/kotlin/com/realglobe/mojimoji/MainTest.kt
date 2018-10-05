@@ -114,4 +114,52 @@ object MainTest : Spek ({
         }
     }
 
+    given("zenToHan") {
+        val shouldPredicate = "should be converted to hankaku. "
+        on("zenkaku Katakana") {
+            it(shouldPredicate) {
+                assertEquals(hanKana, zenToHan(zenKana))
+            }
+        }
+        on("zenkaku alphabet") {
+            it(shouldPredicate) {
+                assertEquals(hanAlphabet, zenToHan(zenAlphabet))
+            }
+        }
+        on("zenkaku digit") {
+            it(shouldPredicate) {
+                assertEquals(hanDigit, zenToHan(zenDigit))
+            }
+        }
+        on("zenkaku symbol") {
+            it(shouldPredicate) {
+                assertEquals(hanSymbol, zenToHan(zenSymbol))
+            }
+        }
+        on ("call with kana=false") {
+            it("should not convert kana. ") {
+                assertEquals("アイウabc0123!#", zenToHan(zenAll, kana = false))
+            }
+        }
+        on ("call with ascii=false") {
+            it("should only convert kana. ") {
+                assertEquals("ｱｲｳａｂｃ０１２３！＃", zenToHan(zenAll, ascii = false))
+            }
+        }
+        on("call with alphabet=false") {
+            it("should not convert alphabet") {
+                assertEquals("ｱｲｳａｂｃ0123!#", zenToHan(zenAll, alphabet = false))
+            }
+        }
+        on ("call with digit=false") {
+            it("should not convert digit. ") {
+                assertEquals("ｱｲｳabc０１２３!#", zenToHan(zenAll, digit = false))
+            }
+        }
+        on ("call with symbol=false") {
+            it("should not convert symbol. ") {
+                assertEquals("ｱｲｳabc0123！＃", zenToHan(zenAll, symbol = false))
+            }
+        }
+    }
 })
