@@ -17,7 +17,7 @@ allprojects {
 }
 
 dependencies {
-        implementation 'com.github.realglobe-Inc:mojimoji-jvm:0.1'
+        implementation 'com.github.realglobe-Inc:mojimoji-jvm:0.2'
 }
 ```
 
