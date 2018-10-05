@@ -3,7 +3,7 @@ package com.realglobe.mojimoji
 fun hanToZen(
         text: String,
         ascii: Boolean = true,
-        alpha: Boolean = true,
+        alphabet: Boolean = true,
         digit: Boolean = true,
         symbol: Boolean = true,
         kana: Boolean = true
@@ -18,7 +18,7 @@ fun hanToZen(
         val kanaMaruPrev = HZTable.kanaMaru[prev]
         val kanaValue = HZTable.kana[c]
         when {
-            ascii && alpha && alphaValue != null -> res.append(alphaValue)
+            ascii && alphabet && alphaValue != null -> res.append(alphaValue)
             ascii && digit && digitValue != null -> res.append(digitValue)
             ascii && symbol && symbolValue != null -> res.append(symbolValue)
             kana && c == 'ﾞ' &&  kanaTenPrev != null -> {
@@ -40,7 +40,7 @@ fun hanToZen(
 fun zenToHan(
         text: String,
         ascii: Boolean = true,
-        alpha: Boolean = true,
+        alphabet: Boolean = true,
         digit: Boolean = true,
         symbol: Boolean = true,
         kana: Boolean = true
@@ -55,7 +55,7 @@ fun zenToHan(
         val kanaTenValue = ZHTable.kanaTen[c]
         val kanaMaruValue = ZHTable.kanaMaru[c]
         when {
-            ascii && alpha && alphaValue != null -> res.append(alphaValue)
+            ascii && alphabet && alphaValue != null -> res.append(alphaValue)
             ascii && digit && digitValue != null -> res.append(digitValue)
             ascii && symbol && symbolValue != null -> res.append(symbolValue)
             kana && kanaValue != null -> res.append(kanaValue)

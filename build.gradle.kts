@@ -1,9 +1,19 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+buildscript {
+    dependencies {
+        classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.0")
+    }
+}
+
 plugins {
     java
     maven
     kotlin("jvm") version "1.2.61"
+}
+
+apply {
+    plugin("org.junit.platform.gradle.plugin")
 }
 
 group = "com.realglobe"
@@ -15,7 +25,9 @@ repositories {
 dependencies {
     compile(kotlin("stdlib-jdk8"))
 
-    testCompile("junit", "junit", "4.12")
+    testCompile("org.jetbrains.spek:spek-api:1.1.5")
+    testRuntime("org.jetbrains.spek:spek-junit-platform-engine:1.1.5")
+    testCompile(kotlin("test"))
 }
 
 configure<JavaPluginConvention> {
