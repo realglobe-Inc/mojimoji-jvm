@@ -16,7 +16,7 @@ apply {
     plugin("org.junit.platform.gradle.plugin")
 }
 
-group = "com.realglobe"
+group = "jp.realglobe"
 
 repositories {
     mavenCentral()
